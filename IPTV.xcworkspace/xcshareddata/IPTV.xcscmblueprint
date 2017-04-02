@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9AE42DC131E30684E76E35445D2C86EC787A08A0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "941BA86414B590A482BF680908A7C21AE098BD19" : 9223372036854775807,
+    "9AE42DC131E30684E76E35445D2C86EC787A08A0" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2E5D9B20-6E92-40AB-B19E-EEADB689C74E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "941BA86414B590A482BF680908A7C21AE098BD19" : "Pantomime\/",
+    "9AE42DC131E30684E76E35445D2C86EC787A08A0" : "IPTV\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "IPTV",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "IPTV.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/iain17\/Pantomime.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "941BA86414B590A482BF680908A7C21AE098BD19"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/iain17\/IPTV.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9AE42DC131E30684E76E35445D2C86EC787A08A0"
+    }
+  ]
+}
