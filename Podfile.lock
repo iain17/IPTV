@@ -1,8 +1,10 @@
 PODS:
   - Pantomime (0.1.4)
+  - TVVLCKit (2.1.0)
 
 DEPENDENCIES:
   - Pantomime (from `/Users/iain17/Documents/mobileProjects/GIT/Pantomime`)
+  - TVVLCKit (~> 2.1.0)
 
 EXTERNAL SOURCES:
   Pantomime:
@@ -10,7 +12,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Pantomime: 907ad7597247b3f0ea17975cce83c6004bee6632
+  TVVLCKit: 6b30e543632aae88be445a8e58e065b3a8e8006e
 
-PODFILE CHECKSUM: 99dac1e9d0da77f40543cac15dd811c8ac24d643
+PODFILE CHECKSUM: 0d305225808b2f7cb61d91b1567c0f4bafed05f7
 
 COCOAPODS: 1.2.1.beta.1

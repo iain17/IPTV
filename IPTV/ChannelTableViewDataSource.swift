@@ -27,6 +27,7 @@ class ChannelTableViewDataSource: NSObject, UITableViewDataSource {
         loadPlayList()
         defer {
             self.tableView.reloadData()
+            
         }
         self.channels.removeAll()
         if let playlist = self.playlist {
@@ -42,12 +43,13 @@ class ChannelTableViewDataSource: NSObject, UITableViewDataSource {
         if segment.title == nil || segment.path == nil {
             return
         }
-        var vod = false
+        let title = segment.title!
+        let path = segment.path!
+        
         //Only Dutch, British and VOD channels.
         if let properties = segment.properties {
             if let group = properties["group-title"] {
-                vod = group.hasPrefix("VOD:")
-                if group != "Nederland" && group != "British" && !vod {
+                if group != "Nederland" && group != "British" {
                     return
                 }
             } else {
@@ -65,7 +67,8 @@ class ChannelTableViewDataSource: NSObject, UITableViewDataSource {
             
             //If the channel is not 1080p, ignore it if it isn't dave or a vod.
             if !title.contains("1080P") &&
-                ( !title.contains("Dave") && !vod) {
+                ( !title.contains("Dave")
+            ) {
                 return
             }
         }

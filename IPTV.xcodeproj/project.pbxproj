@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16BB491290BAA729EC0E3C1D /* Pods_IPTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBDD97B7EB7923B22D85F8E /* Pods_IPTV.framework */; };
 		278AB5E81E90759200345CDC /* ChannelTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278AB5E71E90759200345CDC /* ChannelTableViewDataSource.swift */; };
 		278AB5EA1E9078DD00345CDC /* ChannelTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278AB5E91E9078DD00345CDC /* ChannelTableCell.swift */; };
 		278AB5EC1E907AFE00345CDC /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278AB5EB1E907AFE00345CDC /* Channel.swift */; };
@@ -15,21 +16,6 @@
 		27D3B0921E904117001E5ECE /* playerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D3B0911E904117001E5ECE /* playerViewController.swift */; };
 		27EDFCB41E90723300945246 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDFCB31E90723300945246 /* constants.swift */; };
 		B51687DC51A6ED12A1601FD8 /* Pods_IPTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E80FE3D00E444B9636C0366A /* Pods_IPTV.framework */; };
-		CB24FA191C31B58B00787AA6 /* TVVLCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB24FA181C31B58B00787AA6 /* TVVLCKit.framework */; };
-		CB24FA1B1C31B62200787AA6 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB24FA1A1C31B62200787AA6 /* CoreMedia.framework */; };
-		CB24FA1D1C31B62700787AA6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB24FA1C1C31B62700787AA6 /* CoreVideo.framework */; };
-		CB24FA1F1C31B63D00787AA6 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB24FA1E1C31B63D00787AA6 /* libc++.tbd */; };
-		CB24FA211C31B64400787AA6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB24FA201C31B64400787AA6 /* Security.framework */; };
-		CB24FA231C31B64C00787AA6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB24FA221C31B64C00787AA6 /* QuartzCore.framework */; };
-		CB24FA251C31B65800787AA6 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB24FA241C31B65800787AA6 /* libiconv.tbd */; };
-		CB24FA271C31B65F00787AA6 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB24FA261C31B65F00787AA6 /* libbz2.tbd */; };
-		CB24FA291C31B66600787AA6 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB24FA281C31B66600787AA6 /* CoreText.framework */; };
-		CB24FA2B1C31B67000787AA6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB24FA2A1C31B67000787AA6 /* CFNetwork.framework */; };
-		CB24FA2D1C31B67500787AA6 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB24FA2C1C31B67500787AA6 /* OpenGLES.framework */; };
-		CB24FA2F1C31B67B00787AA6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB24FA2E1C31B67B00787AA6 /* AudioToolbox.framework */; };
-		CB24FA331C31B68600787AA6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB24FA321C31B68600787AA6 /* UIKit.framework */; };
-		CB24FA351C31B68C00787AA6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB24FA341C31B68C00787AA6 /* Foundation.framework */; };
-		CB24FA371C31B69400787AA6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB24FA361C31B69400787AA6 /* CoreGraphics.framework */; };
 		CB9EE3FB1C30425000B116E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EE3FA1C30425000B116E0 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,21 +31,6 @@
 		9FBDD97B7EB7923B22D85F8E /* Pods_IPTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IPTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F65E5363957C8D016043DD /* Pods-IPTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-IPTV/Pods-IPTV.release.xcconfig"; sourceTree = "<group>"; };
 		A60476E95AE8F992D2444C63 /* Pods-IPTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-IPTV/Pods-IPTV.release.xcconfig"; sourceTree = "<group>"; };
-		CB24FA181C31B58B00787AA6 /* TVVLCKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TVVLCKit.framework; sourceTree = "<group>"; };
-		CB24FA1A1C31B62200787AA6 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		CB24FA1C1C31B62700787AA6 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		CB24FA1E1C31B63D00787AA6 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		CB24FA201C31B64400787AA6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		CB24FA221C31B64C00787AA6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		CB24FA241C31B65800787AA6 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
-		CB24FA261C31B65F00787AA6 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
-		CB24FA281C31B66600787AA6 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		CB24FA2A1C31B67000787AA6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		CB24FA2C1C31B67500787AA6 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		CB24FA2E1C31B67B00787AA6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		CB24FA321C31B68600787AA6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		CB24FA341C31B68C00787AA6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		CB24FA361C31B69400787AA6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CB9EE3F71C30425000B116E0 /* IPTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB9EE3FA1C30425000B116E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB9EE4031C30425000B116E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,22 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB24FA371C31B69400787AA6 /* CoreGraphics.framework in Frameworks */,
-				CB24FA351C31B68C00787AA6 /* Foundation.framework in Frameworks */,
-				CB24FA331C31B68600787AA6 /* UIKit.framework in Frameworks */,
-				CB24FA2F1C31B67B00787AA6 /* AudioToolbox.framework in Frameworks */,
-				CB24FA2D1C31B67500787AA6 /* OpenGLES.framework in Frameworks */,
-				CB24FA2B1C31B67000787AA6 /* CFNetwork.framework in Frameworks */,
-				CB24FA291C31B66600787AA6 /* CoreText.framework in Frameworks */,
-				CB24FA271C31B65F00787AA6 /* libbz2.tbd in Frameworks */,
-				CB24FA251C31B65800787AA6 /* libiconv.tbd in Frameworks */,
-				CB24FA231C31B64C00787AA6 /* QuartzCore.framework in Frameworks */,
-				CB24FA211C31B64400787AA6 /* Security.framework in Frameworks */,
-				CB24FA1F1C31B63D00787AA6 /* libc++.tbd in Frameworks */,
-				CB24FA1D1C31B62700787AA6 /* CoreVideo.framework in Frameworks */,
-				CB24FA1B1C31B62200787AA6 /* CoreMedia.framework in Frameworks */,
-				CB24FA191C31B58B00787AA6 /* TVVLCKit.framework in Frameworks */,
 				B51687DC51A6ED12A1601FD8 /* Pods_IPTV.framework in Frameworks */,
+				16BB491290BAA729EC0E3C1D /* Pods_IPTV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,21 +66,6 @@
 		27D3B08E1E903FF6001E5ECE /* deps */ = {
 			isa = PBXGroup;
 			children = (
-				CB24FA361C31B69400787AA6 /* CoreGraphics.framework */,
-				CB24FA341C31B68C00787AA6 /* Foundation.framework */,
-				CB24FA321C31B68600787AA6 /* UIKit.framework */,
-				CB24FA2E1C31B67B00787AA6 /* AudioToolbox.framework */,
-				CB24FA2C1C31B67500787AA6 /* OpenGLES.framework */,
-				CB24FA2A1C31B67000787AA6 /* CFNetwork.framework */,
-				CB24FA281C31B66600787AA6 /* CoreText.framework */,
-				CB24FA261C31B65F00787AA6 /* libbz2.tbd */,
-				CB24FA241C31B65800787AA6 /* libiconv.tbd */,
-				CB24FA221C31B64C00787AA6 /* QuartzCore.framework */,
-				CB24FA201C31B64400787AA6 /* Security.framework */,
-				CB24FA1E1C31B63D00787AA6 /* libc++.tbd */,
-				CB24FA1C1C31B62700787AA6 /* CoreVideo.framework */,
-				CB24FA1A1C31B62200787AA6 /* CoreMedia.framework */,
-				CB24FA181C31B58B00787AA6 /* TVVLCKit.framework */,
 			);
 			name = deps;
 			sourceTree = "<group>";
