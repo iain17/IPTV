@@ -3,7 +3,7 @@
 //  IPTV
 //
 //  Created by Iain Munro on 02/04/2017.
-//  Copyright © 2017 Larry Gadea. All rights reserved.
+//  Copyright © 2017 Iain Munro. All rights reserved.
 //
 
 import Foundation
@@ -26,8 +26,8 @@ class ChannelTableViewDataSource: NSObject, UITableViewDataSource {
     func buildChannelList() {
         loadPlayList()
         defer {
+            self.channels = self.channels.sorted(by: { $0.priority < $1.priority })
             self.tableView.reloadData()
-            
         }
         self.channels.removeAll()
         if let playlist = self.playlist {
@@ -43,44 +43,82 @@ class ChannelTableViewDataSource: NSObject, UITableViewDataSource {
         if segment.title == nil || segment.path == nil {
             return
         }
-        let title = segment.title!
-        let path = segment.path!
+        var title = segment.title!
+        var path = segment.path!
+        var priority = 0
         
         //Only Dutch, British and VOD channels.
         if let properties = segment.properties {
             if let group = properties["group-title"] {
-                if group != "Nederland" && group != "British" {
-                    return
+                switch group {
+                case "Nederland":
+                    priority = 10
+                    if title.contains("NPO") {
+                        priority = 1
+                    }
+                    if title.contains("RTL") {
+                        priority = 9
+                    }
+                    break
+                case "British":
+                    priority = 20
+                    if title.contains("Daave") {
+                        priority = 15
+                    }
+                    if title.contains("BBC") {
+                        priority = 18
+                    }
+                    break
+                case "France":
+                    priority = 30
+                    break
+                case "Germany & Austria":
+                    priority = 40
+                    break
+                case "Switzerland":
+                    priority = 50
+                    break
+                default:
+                    break
                 }
-            } else {
-                return
             }
-        } else {
+        }
+        
+        if priority == 0 {
             return
         }
         
         //Remove country seperator.
-        if let title = segment.title {
-            if title.hasPrefix("===") {
-                return
-            }
-            
-            //If the channel is not 1080p, ignore it if it isn't dave or a vod.
-            if !title.contains("1080P") &&
-                ( !title.contains("Dave")
-            ) {
-                return
-            }
-        }
-        
-        let url = URL(string: segment.path!)
-        if url == nil {
+        if title.hasPrefix("===") {
             return
         }
         
-        let channel = Channel(name: segment.title!, url: url!)
+        //If the channel is not 1080p, ignore it if it isn't dave.
+        if !title.contains("1080P") &&
+            ( !title.contains("Dave")
+        ) {
+            return
+        }
+        
+        var logo:URL?
+        if let properties = segment.properties {
+            if let logoRaw = properties["tvg-logo"] {
+                logo = URL(string: logoRaw)
+            }
+        }
+    
+        let url = URL(string: path)
+        if url == nil {
+            return
+        }
+        title = title.replacingOccurrences(of: "1080P", with: "")
+        title = title.replacingOccurrences(of: " HD", with: "")
+        title = title.replacingOccurrences(of: "VIP UK:", with: "")
+        title = title.replacingOccurrences(of: "UK:", with: "")
+        title = title.replacingOccurrences(of: "NL:", with: "")
+        
+        let channel = Channel(name: title, url: url!, icon: logo, priority: priority)
         self.channels.append(channel)
-        //self.channels.append(Channel(name: (segment?.title)!))
     }
     
     func loadPlayList() {

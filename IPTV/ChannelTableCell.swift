@@ -3,7 +3,7 @@
 //  IPTV
 //
 //  Created by Iain Munro on 02/04/2017.
-//  Copyright © 2017 Larry Gadea. All rights reserved.
+//  Copyright © 2017 Iain Munro. All rights reserved.
 //
 
 import Foundation
@@ -16,7 +16,11 @@ class ChannelTableCell: UITableViewCell {
     
     func render(channel: Channel) {
         name.text = channel.name
-        //TODO: icon. cache.
+        if let iconUrl = channel.icon {
+            icon.cacheSetImageFromURL(iconUrl)
+        } else {
+            icon.image = nil
+        }
     }
     
 }

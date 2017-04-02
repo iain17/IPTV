@@ -3,7 +3,7 @@
 //  TVTestApp
 //
 //  Created by Iain Munro on 01/04/2017.
-//  Copyright © 2017 Larry Gadea. All rights reserved.
+//  Copyright © 2017 Iain Munro. All rights reserved.
 //
 
 import Foundation
@@ -34,11 +34,10 @@ class playerViewController : UIViewController, UITableViewDelegate {
         self.view.addGestureRecognizer(swipeLeft)
         
         //TODO: Make it remember the last channel
-        play((dataSource?.channels[0].url)!)
+        //play((dataSource?.channels[0].url)!)
     }
     
     func play(_ url:URL) {
-        print("starting")
         mp.media = VLCMedia(url: url)
         mp.play()
         closeMenu(gesture: UIGestureRecognizer(target: nil, action: nil))

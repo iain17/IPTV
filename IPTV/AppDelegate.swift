@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  TVTestApp
 //
-//  Created by Larry Gadea on 12/27/15.
-//  Copyright © 2015 Larry Gadea. All rights reserved.
+//  Created by Iain Munro on 12/27/15.
+//  Copyright © 2015 Iain Munro. All rights reserved.
 //
 
 import UIKit

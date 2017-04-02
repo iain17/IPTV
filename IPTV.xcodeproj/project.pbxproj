@@ -11,6 +11,7 @@
 		278AB5E81E90759200345CDC /* ChannelTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278AB5E71E90759200345CDC /* ChannelTableViewDataSource.swift */; };
 		278AB5EA1E9078DD00345CDC /* ChannelTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278AB5E91E9078DD00345CDC /* ChannelTableCell.swift */; };
 		278AB5EC1E907AFE00345CDC /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278AB5EB1E907AFE00345CDC /* Channel.swift */; };
+		278CC6561E917698005C7DD8 /* Caching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278CC6551E917698005C7DD8 /* Caching.swift */; };
 		27AAEA291E90737F001395BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27AAEA281E90737F001395BE /* Assets.xcassets */; };
 		27D3B0901E90404E001E5ECE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27D3B08F1E90404E001E5ECE /* Main.storyboard */; };
 		27D3B0921E904117001E5ECE /* playerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D3B0911E904117001E5ECE /* playerViewController.swift */; };
@@ -23,6 +24,7 @@
 		278AB5E71E90759200345CDC /* ChannelTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelTableViewDataSource.swift; sourceTree = "<group>"; };
 		278AB5E91E9078DD00345CDC /* ChannelTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelTableCell.swift; sourceTree = "<group>"; };
 		278AB5EB1E907AFE00345CDC /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		278CC6551E917698005C7DD8 /* Caching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Caching.swift; sourceTree = "<group>"; };
 		27AAEA281E90737F001395BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = IPTV/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		27D3B08F1E90404E001E5ECE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		27D3B0911E904117001E5ECE /* playerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = playerViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				278AB5E71E90759200345CDC /* ChannelTableViewDataSource.swift */,
 				278AB5E91E9078DD00345CDC /* ChannelTableCell.swift */,
 				278AB5EB1E907AFE00345CDC /* Channel.swift */,
+				278CC6551E917698005C7DD8 /* Caching.swift */,
 			);
 			path = IPTV;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				278AB5E81E90759200345CDC /* ChannelTableViewDataSource.swift in Sources */,
+				278CC6561E917698005C7DD8 /* Caching.swift in Sources */,
 				278AB5EC1E907AFE00345CDC /* Channel.swift in Sources */,
 				27D3B0921E904117001E5ECE /* playerViewController.swift in Sources */,
 				CB9EE3FB1C30425000B116E0 /* AppDelegate.swift in Sources */,
