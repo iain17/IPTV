@@ -8,7 +8,7 @@
 
 import Foundation
 
-class playerViewController : UIViewController, UITableViewDelegate {
+class playerViewController : UIViewController, UITableViewDelegate, VLCMediaPlayerDelegate {
     
     let mp = VLCMediaPlayer()
     var dataSource: ChannelTableViewDataSource?
@@ -39,7 +39,8 @@ class playerViewController : UIViewController, UITableViewDelegate {
     
     func play(_ url:URL) {
         mp.media = VLCMedia(url: url)
-        mp.media.addOptions(["network-caching": 3000,  "high-priority": true])
+        mp.delegate = self
+        mp.media.addOptions(["network-caching": 3000, "clock-synchro": 0, "high-priority": true])
         mp.play()
         closeMenu(gesture: UIGestureRecognizer(target: nil, action: nil))
     }
@@ -64,6 +65,28 @@ class playerViewController : UIViewController, UITableViewDelegate {
             self.channelsTableView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width / 3,height: UIScreen.main.bounds.size.height)
             self.channelsTableView.layoutIfNeeded()
         })
+    }
+    
+    func mediaPlayerStateChanged(_ aNotification: Notification!) {
+        switch mp.state {
+        case .error:
+            fallthrough
+        case .ended:
+            fallthrough
+        case .stopped:
+            self.mp.play()
+        case .paused:
+            print("paused")
+            break
+        case .playing:
+            print("playing")
+            break
+        case .buffering:
+            print("buffering")
+            break
+        default:
+            break
+        }
     }
     
 }

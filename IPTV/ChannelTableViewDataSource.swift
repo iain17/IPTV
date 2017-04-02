@@ -38,6 +38,7 @@ class ChannelTableViewDataSource: NSObject, UITableViewDataSource {
             }
         }
     }
+    
     //Adds a channel. Contains the logic showing only relevant channels.
     func addChannel(_ segment: MediaSegment) {
         if segment.title == nil || segment.path == nil {
@@ -47,7 +48,7 @@ class ChannelTableViewDataSource: NSObject, UITableViewDataSource {
         var path = segment.path!
         var priority = 0
         
-        //Only Dutch, British and VOD channels.
+        //Only Dutch, British
         if let properties = segment.properties {
             if let group = properties["group-title"] {
                 switch group {
@@ -62,7 +63,7 @@ class ChannelTableViewDataSource: NSObject, UITableViewDataSource {
                     break
                 case "British":
                     priority = 20
-                    if title.contains("Daave") {
+                    if title.contains("Dave") {
                         priority = 15
                     }
                     if title.contains("BBC") {
@@ -85,7 +86,7 @@ class ChannelTableViewDataSource: NSObject, UITableViewDataSource {
         }
         
         if priority == 0 {
-            return
+            priority = 999
         }
         
         //Remove country seperator.
