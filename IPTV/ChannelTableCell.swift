@@ -19,7 +19,7 @@ class ChannelTableCell: UITableViewCell {
         if let iconUrl = channel.icon {
             icon.cacheSetImageFromURL(iconUrl)
         } else {
-            icon.image = nil
+            icon.image = #imageLiteral(resourceName: "tv1600")
         }
     }
     

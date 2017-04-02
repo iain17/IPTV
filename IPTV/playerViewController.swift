@@ -34,11 +34,12 @@ class playerViewController : UIViewController, UITableViewDelegate {
         self.view.addGestureRecognizer(swipeLeft)
         
         //TODO: Make it remember the last channel
-        //play((dataSource?.channels[0].url)!)
+        play((dataSource?.channels[0].url)!)
     }
     
     func play(_ url:URL) {
         mp.media = VLCMedia(url: url)
+        mp.media.addOptions(["network-caching": 3000,  "high-priority": true])
         mp.play()
         closeMenu(gesture: UIGestureRecognizer(target: nil, action: nil))
     }
