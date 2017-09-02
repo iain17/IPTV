@@ -7,18 +7,20 @@
 //
 
 import Foundation
+import UIKit
+import AVKit
 
-class playerViewController : UIViewController, UITableViewDelegate, VLCMediaPlayerDelegate {
+class playerViewController : UIViewController, UITableViewDelegate {
     
-    let mp = VLCMediaPlayer()
     var dataSource: ChannelTableViewDataSource?
     
     @IBOutlet weak var channelsTableView: UITableView!
     @IBOutlet var videoView: UIView!
+    var player: AVPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mp.drawable = videoView
+        
         view.bringSubview(toFront: channelsTableView)
         
         self.dataSource = ChannelTableViewDataSource(tableView: self.channelsTableView)
@@ -38,10 +40,18 @@ class playerViewController : UIViewController, UITableViewDelegate, VLCMediaPlay
     }
     
     func play(_ url:URL) {
-        mp.media = VLCMedia(url: url)
-        mp.delegate = self
-        mp.media.addOptions(["network-caching": 3000, "clock-synchro": 0, "high-priority": true])
-        mp.play()
+        
+        if self.player == nil {
+            self.player = AVPlayer(url: url)
+            let playerLayer = AVPlayerLayer(player: player)
+            playerLayer.frame = self.view.bounds
+            videoView.layer.addSublayer(playerLayer)
+        } else {
+            self.player?.replaceCurrentItem(with: AVPlayerItem(url: url))
+        }
+        player?.play()
+        
+        
         closeMenu(gesture: UIGestureRecognizer(target: nil, action: nil))
     }
     
@@ -65,28 +75,6 @@ class playerViewController : UIViewController, UITableViewDelegate, VLCMediaPlay
             self.channelsTableView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width / 3,height: UIScreen.main.bounds.size.height)
             self.channelsTableView.layoutIfNeeded()
         })
-    }
-    
-    func mediaPlayerStateChanged(_ aNotification: Notification!) {
-        switch mp.state {
-        case .error:
-            fallthrough
-        case .ended:
-            fallthrough
-        case .stopped:
-            self.mp.play()
-        case .paused:
-            print("paused")
-            break
-        case .playing:
-            print("playing")
-            break
-        case .buffering:
-            print("buffering")
-            break
-        default:
-            break
-        }
     }
     
 }
