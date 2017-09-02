@@ -10,13 +10,15 @@ import Foundation
 import UIKit
 import AVKit
 
-class playerViewController : UIViewController, UITableViewDelegate {
+class OverlayViewController : UIViewController, UITableViewDelegate {
     
     var dataSource: ChannelTableViewDataSource?
     
     @IBOutlet weak var channelsTableView: UITableView!
-    @IBOutlet var videoView: UIView!
-    var player: AVPlayer?
+    
+    var playerViewController: PlayerViewController!
+    
+    @IBOutlet weak var playerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,19 +41,15 @@ class playerViewController : UIViewController, UITableViewDelegate {
         play((dataSource?.channels[0].url)!)
     }
     
-    func play(_ url:URL) {
-        
-        if self.player == nil {
-            self.player = AVPlayer(url: url)
-            let playerLayer = AVPlayerLayer(player: player)
-            playerLayer.frame = self.view.bounds
-            videoView.layer.addSublayer(playerLayer)
-        } else {
-            self.player?.replaceCurrentItem(with: AVPlayerItem(url: url))
+    //Fetch embedded view.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? PlayerViewController, segue.identifier == "EmbedSegue" {
+            self.playerViewController = vc
         }
-        player?.play()
-        
-        
+    }
+    
+    func play(_ url:URL) {
+        playerViewController.play(url)
         closeMenu(gesture: UIGestureRecognizer(target: nil, action: nil))
     }
     
