@@ -61,13 +61,16 @@ class ChannelTableViewDataSource: NSObject, UITableViewDataSource {
                         priority = 9
                     }
                     break
-                case "British":
+                case "British", "United Kingdom":
                     priority = 20
-                    if title.contains("Dave") {
-                        priority = 15
-                    }
                     if title.contains("BBC") {
-                        priority = 18
+                        if title.contains("One") {
+                            priority = 2
+                        }
+                        priority = 3
+                    }
+                    if title.contains("Dave") {
+                        priority = 4
                     }
                     break
                 case "France":
@@ -80,7 +83,7 @@ class ChannelTableViewDataSource: NSObject, UITableViewDataSource {
                     priority = 50
                     break
                 default:
-                    break
+                    return
                 }
             }
         }
@@ -117,6 +120,7 @@ class ChannelTableViewDataSource: NSObject, UITableViewDataSource {
         title = title.replacingOccurrences(of: "VIP UK:", with: "")
         title = title.replacingOccurrences(of: "UK:", with: "")
         title = title.replacingOccurrences(of: "NL:", with: "")
+        title = title.replacingOccurrences(of: "DE:", with: "")
         
         let channel = Channel(name: title, url: url!, icon: logo, priority: priority)
         self.channels.append(channel)

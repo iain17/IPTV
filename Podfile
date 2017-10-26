@@ -6,5 +6,5 @@ target 'IPTV' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   pod 'Pantomime', :git => 'https://github.com/iain17/Pantomime.git', :branch => 'feature/EXTINF-properties'
-  pod 'TVVLCKit-unstable', '3.0.0a34'
+  pod 'TVVLCKit-unstable', '3.0.0a42'
 end

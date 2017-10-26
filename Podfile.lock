@@ -1,10 +1,10 @@
 PODS:
   - Pantomime (0.1.4)
-  - TVVLCKit-unstable (3.0.0a34)
+  - TVVLCKit-unstable (3.0.0a42)
 
 DEPENDENCIES:
   - Pantomime (from `https://github.com/iain17/Pantomime.git`, branch `feature/EXTINF-properties`)
-  - TVVLCKit-unstable (= 3.0.0a34)
+  - TVVLCKit-unstable (= 3.0.0a42)
 
 EXTERNAL SOURCES:
   Pantomime:
@@ -18,8 +18,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Pantomime: 907ad7597247b3f0ea17975cce83c6004bee6632
-  TVVLCKit-unstable: 7d25d7ceb97545446321c59b15c15e53c0d2df4d
+  TVVLCKit-unstable: 357723c730f020bb5d79096e12073ad9f746e01a
 
-PODFILE CHECKSUM: 07d5b812c87f665a5360153f08bf470da11081d2
+PODFILE CHECKSUM: a17ddf634f7cbea139dc20773893630e51e60beb
 
-COCOAPODS: 1.2.1.beta.1
+COCOAPODS: 1.3.1
