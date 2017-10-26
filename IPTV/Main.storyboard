@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SkH-8H-QVn">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="13189.4" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SkH-8H-QVn">
     <device id="appleTV" orientation="landscape">
         <adaptation id="light"/>
     </device>
     <dependencies>
         <deployment identifier="tvOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,18 +25,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="Tv4-bP-U28" userLabel="channels">
-                                <rect key="frame" x="20" y="0.0" width="558" height="1080"/>
+                                <rect key="frame" x="0.0" y="0.0" width="668" height="1080"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="558" id="3yp-dY-kQM"/>
+                                    <constraint firstAttribute="width" constant="668" id="3yp-dY-kQM"/>
                                 </constraints>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="channelCell" id="hJW-Ki-43d" customClass="ChannelTableCell" customModule="IPTV" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="66" width="558" height="66"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="channelCell" id="hJW-Ki-43d" customClass="ChannelTableCell" customModule="IPTV" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="66" width="578" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hJW-Ki-43d" id="wal-cn-sUy">
-                                            <rect key="frame" x="0.0" y="0.0" width="542" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="578" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ckW-dc-Pmm" userLabel="icon">
@@ -47,7 +47,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="er3-Do-PcE" userLabel="name">
-                                                    <rect key="frame" x="74" y="10" width="476" height="46"/>
+                                                    <rect key="frame" x="74" y="10" width="586" height="46"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,20 +71,17 @@
                                 </prototypes>
                             </tableView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1x-bp-y1G">
-                                <rect key="frame" x="20" y="0.0" width="1920" height="1080"/>
-                                <connections>
-                                    <segue destination="JhA-8B-Ane" kind="embed" identifier="EmbedSegue" id="AiN-fB-A4E"/>
-                                </connections>
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                             </containerView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="f1x-bp-y1G" firstAttribute="leading" secondItem="DZD-F9-aTD" secondAttribute="leadingMargin" id="5sm-Er-oPS"/>
+                            <constraint firstItem="f1x-bp-y1G" firstAttribute="leading" secondItem="DZD-F9-aTD" secondAttribute="leadingMargin" constant="-110" id="5sm-Er-oPS"/>
                             <constraint firstItem="f1x-bp-y1G" firstAttribute="height" secondItem="DZD-F9-aTD" secondAttribute="height" id="E8o-EB-V6H"/>
-                            <constraint firstItem="tnQ-2O-6Hy" firstAttribute="top" secondItem="Tv4-bP-U28" secondAttribute="bottom" id="LZp-s1-e2r"/>
-                            <constraint firstItem="Tv4-bP-U28" firstAttribute="top" secondItem="3t3-h5-VOD" secondAttribute="bottom" id="XL4-D0-e05"/>
+                            <constraint firstItem="tnQ-2O-6Hy" firstAttribute="top" secondItem="Tv4-bP-U28" secondAttribute="bottom" constant="-60" id="LZp-s1-e2r"/>
+                            <constraint firstItem="Tv4-bP-U28" firstAttribute="top" secondItem="3t3-h5-VOD" secondAttribute="bottom" constant="-60" id="XL4-D0-e05"/>
                             <constraint firstItem="f1x-bp-y1G" firstAttribute="width" secondItem="DZD-F9-aTD" secondAttribute="width" id="c85-tp-qbJ"/>
-                            <constraint firstItem="f1x-bp-y1G" firstAttribute="top" secondItem="3t3-h5-VOD" secondAttribute="bottom" id="jOp-lk-uKa"/>
-                            <constraint firstItem="Tv4-bP-U28" firstAttribute="leading" secondItem="DZD-F9-aTD" secondAttribute="leadingMargin" id="m62-DW-51w"/>
+                            <constraint firstItem="f1x-bp-y1G" firstAttribute="top" secondItem="3t3-h5-VOD" secondAttribute="bottom" constant="-60" id="jOp-lk-uKa"/>
+                            <constraint firstItem="Tv4-bP-U28" firstAttribute="leading" secondItem="DZD-F9-aTD" secondAttribute="leadingMargin" constant="-110" id="m62-DW-51w"/>
                         </constraints>
                     </view>
                     <connections>
@@ -94,16 +91,6 @@
                 </viewController>
             </objects>
             <point key="canvasLocation" x="168" y="215"/>
-        </scene>
-        <!--Player View Controller-->
-        <scene sceneID="NPc-nC-3gz">
-            <objects>
-                <avPlayerViewController storyboardIdentifier="PlayerViewController" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" modalPresentationStyle="overCurrentContext" videoGravity="AVLayerVideoGravityResizeAspectFill" id="JhA-8B-Ane" userLabel="Player View Controller" customClass="PlayerViewController" customModule="IPTV" customModuleProvider="target" sceneMemberID="viewController">
-                    <value key="contentSizeForViewInPopover" type="size" width="1920" height="1080"/>
-                </avPlayerViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gQA-Vq-6Jx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="168" y="1958"/>
         </scene>
     </scenes>
 </document>

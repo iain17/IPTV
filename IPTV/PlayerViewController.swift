@@ -7,34 +7,57 @@
 //
 
 import UIKit
-import AVKit
+import Player
 
-class PlayerViewController: AVPlayerViewController {
-
+class PlayerViewController: UIViewController, PlayerDelegate, PlayerPlaybackDelegate {
+    var player:Player?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let player = AVPlayer(playerItem: nil)
+        self.player = Player()
+        self.player?.playerDelegate = self
+        self.player?.playbackDelegate = self
+        self.player?.view.frame = self.view.bounds
+        
+        self.addChildViewController(self.player!)
+        self.view.addSubview(self.player!.view)
+        self.player?.didMove(toParentViewController: self)
     }
     
     open func play(_ url: URL) {
-        DispatchQueue.main.async {
-            self.player?.replaceCurrentItem(with: AVPlayerItem(url: url))
-            self.player?.play()
-        }
-//        DispatchQueue.main.async {
-//            if self.player == nil {
-//                self.player = AVPlayer(url: url)
-//                self.videoGravity = AVLayerVideoGravityResizeAspectFill
-//    //            let playerLayer = AVPlayerLayer(player: self.player)
-//    //            playerLayer.frame = self.view.bounds
-//    //            playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
-//    //            self.view.layer.addSublayer(playerLayer)
-//            } else {
-//                self.player?.replaceCurrentItem(with: AVPlayerItem(url: url))
-//            }
-//    //        self.view.layer.frame = CGRect(0, 0, self.view.frame.size.width, self.view.frame.size.height)
-//            self.player?.play()
-//        }
+        self.player?.url = url
+    }
+    
+    func playerReady(_ player: Player) {
+        print("test")
+    }
+    
+    func playerPlaybackStateDidChange(_ player: Player) {
+        
+    }
+    
+    func playerBufferingStateDidChange(_ player: Player) {
+        
+    }
+    
+    func playerBufferTimeDidChange(_ bufferTime: Double) {
+        
+    }
+    
+    func playerCurrentTimeDidChange(_ player: Player) {
+        
+    }
+    
+    func playerPlaybackWillStartFromBeginning(_ player: Player) {
+        
+    }
+    
+    func playerPlaybackDidEnd(_ player: Player) {
+        
+    }
+    
+    func playerPlaybackWillLoop(_ player: Player) {
+        
     }
 
 }

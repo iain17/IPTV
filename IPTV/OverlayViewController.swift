@@ -8,20 +8,61 @@
 
 import Foundation
 import UIKit
-import AVKit
+import Player
 
-class OverlayViewController : UIViewController, UITableViewDelegate {
+class OverlayViewController : UIViewController, UITableViewDelegate, PlayerDelegate, PlayerPlaybackDelegate {
+    func playerReady(_ player: Player) {
+        print("mua")
+    }
+    
+    func playerPlaybackStateDidChange(_ player: Player) {
+        print(player.bufferingState)
+    }
+    
+    func playerBufferingStateDidChange(_ player: Player) {
+        print("e")
+    }
+    
+    func playerBufferTimeDidChange(_ bufferTime: Double) {
+        print("d")
+    }
+    
+    func playerCurrentTimeDidChange(_ player: Player) {
+        print("c")
+    }
+    
+    func playerPlaybackWillStartFromBeginning(_ player: Player) {
+        print("v")
+    }
+    
+    func playerPlaybackDidEnd(_ player: Player) {
+        print("text")
+    }
+    
+    func playerPlaybackWillLoop(_ player: Player) {
+        print("a")
+    }
+    
     
     var dataSource: ChannelTableViewDataSource?
     
     @IBOutlet weak var channelsTableView: UITableView!
     
-    var playerViewController: PlayerViewController!
+    var player:Player?
     
     @IBOutlet weak var playerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.player = Player()
+        self.player?.playerDelegate = self
+        self.player?.playbackDelegate = self
+        self.player?.view.frame = self.view.bounds
+        
+        self.addChildViewController(self.player!)
+        self.view.addSubview(self.player!.view)
+        self.player?.didMove(toParentViewController: self)
         
         view.bringSubview(toFront: channelsTableView)
         
@@ -41,15 +82,9 @@ class OverlayViewController : UIViewController, UITableViewDelegate {
         play((dataSource?.channels[0].url)!)
     }
     
-    //Fetch embedded view.
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? PlayerViewController, segue.identifier == "EmbedSegue" {
-            self.playerViewController = vc
-        }
-    }
-    
     func play(_ url:URL) {
-        playerViewController.play(url)
+        player?.url = url
+        self.player?.playFromBeginning()
         closeMenu(gesture: UIGestureRecognizer(target: nil, action: nil))
     }
     
@@ -61,14 +96,14 @@ class OverlayViewController : UIViewController, UITableViewDelegate {
         }
     }
     
-    func closeMenu(gesture: UIGestureRecognizer) {
+    @objc func closeMenu(gesture: UIGestureRecognizer) {
         UIView.animate(withDuration: 1, animations: {
             self.channelsTableView.frame = CGRect(x: -UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width / 3,height: UIScreen.main.bounds.size.height)
             self.channelsTableView.layoutIfNeeded()
         })
     }
     
-    func openMenu(gesture: UIGestureRecognizer) {
+    @objc func openMenu(gesture: UIGestureRecognizer) {
         UIView.animate(withDuration: 1, animations: {
             self.channelsTableView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width / 3,height: UIScreen.main.bounds.size.height)
             self.channelsTableView.layoutIfNeeded()
