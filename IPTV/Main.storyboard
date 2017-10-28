@@ -28,7 +28,7 @@
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="Tv4-bP-U28" userLabel="channels">
-                                <rect key="frame" x="110" y="60" width="558" height="960"/>
+                                <rect key="frame" x="0.0" y="0.0" width="558" height="960"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="558" id="3yp-dY-kQM"/>
@@ -36,10 +36,10 @@
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="channelCell" id="hJW-Ki-43d" customClass="ChannelTableCell" customModule="IPTV" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="66" width="558" height="66"/>
+                                        <rect key="frame" x="0.0" y="66" width="468" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hJW-Ki-43d" id="wal-cn-sUy">
-                                            <rect key="frame" x="0.0" y="0.0" width="558" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="468" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ckW-dc-Pmm" userLabel="icon">
@@ -77,13 +77,13 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="j47-gL-r2i" firstAttribute="top" secondItem="3t3-h5-VOD" secondAttribute="bottom" id="3Du-A1-L6U"/>
-                            <constraint firstItem="tnQ-2O-6Hy" firstAttribute="top" secondItem="Tv4-bP-U28" secondAttribute="bottom" id="LZp-s1-e2r"/>
+                            <constraint firstItem="tnQ-2O-6Hy" firstAttribute="top" secondItem="Tv4-bP-U28" secondAttribute="bottom" constant="60" id="LZp-s1-e2r"/>
                             <constraint firstItem="j47-gL-r2i" firstAttribute="width" secondItem="DZD-F9-aTD" secondAttribute="width" id="Pye-iJ-siP"/>
                             <constraint firstItem="j47-gL-r2i" firstAttribute="centerX" secondItem="DZD-F9-aTD" secondAttribute="centerX" id="QMf-zn-QIf"/>
-                            <constraint firstItem="j47-gL-r2i" firstAttribute="height" secondItem="DZD-F9-aTD" secondAttribute="height" id="SDX-yZ-Ryo"/>
-                            <constraint firstItem="Tv4-bP-U28" firstAttribute="top" secondItem="3t3-h5-VOD" secondAttribute="bottom" id="XL4-D0-e05"/>
+                            <constraint firstItem="Tv4-bP-U28" firstAttribute="top" secondItem="3t3-h5-VOD" secondAttribute="bottom" constant="-60" id="XL4-D0-e05"/>
                             <constraint firstItem="tnQ-2O-6Hy" firstAttribute="top" secondItem="j47-gL-r2i" secondAttribute="bottom" id="YML-IT-T2h"/>
-                            <constraint firstItem="Tv4-bP-U28" firstAttribute="leading" secondItem="DZD-F9-aTD" secondAttribute="leadingMargin" id="m62-DW-51w"/>
+                            <constraint firstItem="Tv4-bP-U28" firstAttribute="leading" secondItem="DZD-F9-aTD" secondAttribute="leading" id="cww-4t-pUE"/>
+                            <constraint firstItem="Tv4-bP-U28" firstAttribute="leading" secondItem="DZD-F9-aTD" secondAttribute="leadingMargin" constant="-110" id="m62-DW-51w"/>
                             <constraint firstItem="j47-gL-r2i" firstAttribute="centerY" secondItem="DZD-F9-aTD" secondAttribute="centerY" id="tcD-gr-Cbo"/>
                         </constraints>
                     </view>

@@ -40,7 +40,12 @@ class playerViewController : UIViewController, UITableViewDelegate, VLCMediaPlay
     func play(_ url:URL) {
         mp.media = VLCMedia(url: url)
         mp.delegate = self
-        mp.media.addOptions(["network-caching": 3000, "clock-synchro": 0, "high-priority": true])
+        mp.media.addOptions([
+            "network-caching": 3000,
+             "clock-synchro": 0,
+//             "cr-average": 10000,
+             "high-priority": true]
+        )
         mp.play()
         closeMenu(gesture: UIGestureRecognizer(target: nil, action: nil))
     }
@@ -53,14 +58,14 @@ class playerViewController : UIViewController, UITableViewDelegate, VLCMediaPlay
         }
     }
     
-    func closeMenu(gesture: UIGestureRecognizer) {
+    @objc func closeMenu(gesture: UIGestureRecognizer) {
         UIView.animate(withDuration: 1, animations: {
             self.channelsTableView.frame = CGRect(x: -UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width / 3,height: UIScreen.main.bounds.size.height)
             self.channelsTableView.layoutIfNeeded()
         })
     }
     
-    func openMenu(gesture: UIGestureRecognizer) {
+    @objc func openMenu(gesture: UIGestureRecognizer) {
         UIView.animate(withDuration: 1, animations: {
             self.channelsTableView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width / 3,height: UIScreen.main.bounds.size.height)
             self.channelsTableView.layoutIfNeeded()
