@@ -16,6 +16,9 @@ class playerViewController : UIViewController, UITableViewDelegate, VLCMediaPlay
     @IBOutlet weak var channelsTableView: UITableView!
     @IBOutlet var videoView: UIView!
     
+    @IBOutlet weak var channelWidth: NSLayoutConstraint!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mp.drawable = videoView
@@ -24,6 +27,7 @@ class playerViewController : UIViewController, UITableViewDelegate, VLCMediaPlay
         self.dataSource = ChannelTableViewDataSource(tableView: self.channelsTableView)
         channelsTableView.dataSource = self.dataSource
         channelsTableView.delegate = self
+        channelWidth.constant = self.view.frame.size.width / 3
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(openMenu(gesture:)))
         swipeRight.direction = .right
@@ -41,11 +45,20 @@ class playerViewController : UIViewController, UITableViewDelegate, VLCMediaPlay
         mp.media = VLCMedia(url: url)
         mp.delegate = self
         mp.media.addOptions([
-            "network-caching": 3000,
-             "clock-synchro": 0,
-//             "cr-average": 10000,
-             "high-priority": true]
-        )
+            "network-caching": 10 * 1000,
+            "sout-mux-caching": 30 * 1000,
+            //            "sout-qsv-software": true,
+            "mtu": 1500,
+            //            "sout-livehttp-caching": true,
+            //            "sout-livehttp-seglen": 10 * 60 * 1000,
+            //            "sout-livehttp": 10 * 60 * 1000,
+            "cr-average": 10 * 1000,
+            //            "network-synchronisation": true,
+            "clock-jitter": 60 * 1000,//60 * 1000,
+            "clock-synchro": 0,
+            "force-dolby-surround": 1,
+            "high-priority": true
+        ])
         mp.play()
         closeMenu(gesture: UIGestureRecognizer(target: nil, action: nil))
     }
