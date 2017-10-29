@@ -1,10 +1,10 @@
 PODS:
   - Pantomime (0.1.4)
-  - Player (0.7.0)
+  - Player (0.8.4)
 
 DEPENDENCIES:
   - Pantomime (from `https://github.com/iain17/Pantomime.git`, branch `feature/EXTINF-properties`)
-  - Player (~> 0.7.0)
+  - Player (~> 0.8.0)
 
 EXTERNAL SOURCES:
   Pantomime:
@@ -18,8 +18,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Pantomime: 907ad7597247b3f0ea17975cce83c6004bee6632
-  Player: f3a8a982e5c4a7cf6a8e4307b16597f2b7a7af0d
+  Player: e45514e9e5fb8ff18f50eb2ba6f84dac9b6a0024
 
-PODFILE CHECKSUM: f2136b70b534347439511477e9f88b45e3474239
+PODFILE CHECKSUM: 9be957707f104e108a74cfc76f08f5d94c873c7c
 
 COCOAPODS: 1.3.1

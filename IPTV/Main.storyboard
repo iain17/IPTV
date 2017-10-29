@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="13189.4" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SkH-8H-QVn">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="13196" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SkH-8H-QVn">
     <device id="appleTV" orientation="landscape">
         <adaptation id="light"/>
     </device>
     <dependencies>
         <deployment identifier="tvOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +26,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="Tv4-bP-U28" userLabel="channels">
                                 <rect key="frame" x="0.0" y="0.0" width="668" height="1080"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="668" id="3yp-dY-kQM"/>
                                 </constraints>
@@ -47,7 +47,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="er3-Do-PcE" userLabel="name">
-                                                    <rect key="frame" x="74" y="10" width="586" height="46"/>
+                                                    <rect key="frame" x="74" y="10" width="366" height="46"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -70,27 +70,36 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1x-bp-y1G">
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VNZ-2D-trU">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <connections>
+                                    <segue destination="NGw-IY-Dic" kind="embed" identifier="player" id="dSU-To-pco"/>
+                                </connections>
                             </containerView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="f1x-bp-y1G" firstAttribute="leading" secondItem="DZD-F9-aTD" secondAttribute="leadingMargin" constant="-110" id="5sm-Er-oPS"/>
-                            <constraint firstItem="f1x-bp-y1G" firstAttribute="height" secondItem="DZD-F9-aTD" secondAttribute="height" id="E8o-EB-V6H"/>
                             <constraint firstItem="tnQ-2O-6Hy" firstAttribute="top" secondItem="Tv4-bP-U28" secondAttribute="bottom" constant="-60" id="LZp-s1-e2r"/>
                             <constraint firstItem="Tv4-bP-U28" firstAttribute="top" secondItem="3t3-h5-VOD" secondAttribute="bottom" constant="-60" id="XL4-D0-e05"/>
-                            <constraint firstItem="f1x-bp-y1G" firstAttribute="width" secondItem="DZD-F9-aTD" secondAttribute="width" id="c85-tp-qbJ"/>
-                            <constraint firstItem="f1x-bp-y1G" firstAttribute="top" secondItem="3t3-h5-VOD" secondAttribute="bottom" constant="-60" id="jOp-lk-uKa"/>
+                            <constraint firstItem="VNZ-2D-trU" firstAttribute="height" secondItem="DZD-F9-aTD" secondAttribute="height" id="hB6-It-b3s"/>
+                            <constraint firstItem="VNZ-2D-trU" firstAttribute="width" secondItem="DZD-F9-aTD" secondAttribute="width" id="jWk-Rp-C7l"/>
                             <constraint firstItem="Tv4-bP-U28" firstAttribute="leading" secondItem="DZD-F9-aTD" secondAttribute="leadingMargin" constant="-110" id="m62-DW-51w"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="channelsTableView" destination="Tv4-bP-U28" id="zXS-SX-z7y"/>
-                        <outlet property="playerView" destination="f1x-bp-y1G" id="cIO-wc-4lM"/>
+                        <outlet property="channelsTableView" destination="Tv4-bP-U28" id="cpZ-wf-5OK"/>
+                        <outlet property="containerViewPlayer" destination="VNZ-2D-trU" id="llD-9m-Mia"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="168" y="215"/>
+            <point key="canvasLocation" x="13" y="-1792"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="Juv-c2-cHr">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="NGw-IY-Dic" customClass="PlayerViewController" customModule="IPTV" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9P8-Ti-a7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13" y="584"/>
         </scene>
     </scenes>
 </document>
